@@ -13,9 +13,9 @@ import styles from "./Button.module.css";
 //     box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
 //     cursor: pointer;
 
-    // @media(min-width:768px){
-    //   width:auto;
-    // }
+// @media(min-width:768px){
+//   width:auto;
+// }
 
 //   &:focus {
 //     outline: none;
@@ -29,7 +29,7 @@ import styles from "./Button.module.css";
 //   }
 // `;
 
-const Button = props => {
+const Button = (props) => {
   return (
     <button type={props.type} className={styles.button} onClick={props.onClick}>
       {props.children}

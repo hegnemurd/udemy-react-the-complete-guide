@@ -1,12 +1,12 @@
 import React from "react";
 
-import "./Button.module.css";
+import styles from "./Button.module.css";
 
-const Button = () => {
+const Button = (props) => {
   return (
-    <div>
-      <button className="button">Add User</button>
-    </div>
+    <button className={styles.button} type={props.type} onClick={props.onClick}>
+      {props.children}
+    </button>
   );
 };
 
