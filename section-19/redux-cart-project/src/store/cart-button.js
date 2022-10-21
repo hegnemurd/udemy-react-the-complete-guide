@@ -12,4 +12,4 @@ const cartButtonSlice = createSlice({
 
 export const cartActions = cartButtonSlice.actions;
 
-export default cartButtonSlice.reducer;
+export default cartButtonSlice;
