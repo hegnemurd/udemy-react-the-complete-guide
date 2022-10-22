@@ -20,23 +20,24 @@ const cartItemsSlice = createSlice({
           name: newItem.title,
         });
       } else {
-        existingItem.quanity++;
+        existingItem.quantity++;
         existingItem.totalPrice = existingItem.totalPrice + newItem.price;
       }
     },
-    removeItem(state, action) {
+    removeItemFromCart(state, action) {
       const id = action.payload;
       const existingItem = state.items.find((item) => item.id === id);
       state.totalQuantity--;
-      if (existingItem.quanity === 1) {
+      if (existingItem.quantity === 1) {
         state.items = state.items.filter((item) => item.id !== id);
       } else {
         existingItem.quantity--;
+        existingItem.totalPrice = existingItem.totalPrice - existingItem.price;
       }
     },
   },
 });
 
-export const cartItemsActions = cartItemsSlice.actions;
+export const cartActions = cartItemsSlice.actions;
 
 export default cartItemsSlice;

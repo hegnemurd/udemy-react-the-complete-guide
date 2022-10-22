@@ -10,6 +10,6 @@ const cartButtonSlice = createSlice({
   },
 });
 
-export const cartActions = cartButtonSlice.actions;
+export const cartButtonActions = cartButtonSlice.actions;
 
 export default cartButtonSlice;
