@@ -5,7 +5,7 @@ export const fetchCartData = () => {
   return async (dispatch) => {
     const fetchData = async () => {
       const response = await fetch(
-        " firebase link /cart.json"
+        "firebase link /cart.json"
       );
 
       if (!response) {
@@ -18,7 +18,12 @@ export const fetchCartData = () => {
 
     try {
       const cartData = await fetchData();
-      dispatch(cartActions.replaceCart(cartData));
+      dispatch(
+        cartActions.replaceCart({
+          items: cartData.items || [],
+          totalQuantity: cartData.totalQuantity,
+        })
+      );
     } catch (error) {
       dispatch(
         uiActions.showNotification({
@@ -43,12 +48,12 @@ export const sendCartData = (cart) => {
 
     const sendRequest = async () => {
       const response = await fetch(
-        " firebase link /cart.json",
+        "firebase link /cart.json",
         {
           method: "PUT",
           body: JSON.stringify({
             items: cart.items,
-            totalQuanity: cart.totalQuanity,
+            totalQuantity: cart.totalQuantity,
           }),
         }
       );
