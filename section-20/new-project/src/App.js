@@ -1,27 +1,27 @@
 import { Route, Switch, Redirect } from "react-router-dom";
 
-import Products from "./pages/Products";
-import Welcome from "./pages/Welcome";
-import MainHeader from "./components/MainHeader";
-import ProductDetail from "./pages/ProductDetail";
+import AllQuotes from "./pages/AllQuotes";
+import NewQuote from "./pages/NewQuote";
+import QuoteDetail from "./pages/QuoteDetail";
+import MainNavigation from "./components/layout/MainNavigation";
 
 function App() {
   return (
     <div>
-      <MainHeader />
+      <MainNavigation />
       <main>
         <Switch>
           <Route path="/" exact>
-            <Redirect to="/welcome" />
+            <Redirect to="/quotes" />
           </Route>
-          <Route path="/welcome">
-            <Welcome />
+          <Route path="/quotes" exact>
+            <AllQuotes />
           </Route>
-          <Route path="/products" exact>
-            <Products />
+          <Route path="/quotes/:quoteId">
+            <QuoteDetail />
           </Route>
-          <Route path="/products/:productId">
-            <ProductDetail />
+          <Route path="/new-quote">
+            <NewQuote />
           </Route>
         </Switch>
       </main>
@@ -30,6 +30,3 @@ function App() {
 }
 
 export default App;
-
-// our-domain.com/ => Component A
-// our-domain.com/products => Component B
