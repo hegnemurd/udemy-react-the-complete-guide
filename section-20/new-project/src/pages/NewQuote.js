@@ -1,15 +1,11 @@
-const NewQuote = () => {
-  return (
-    <section>
-        <h1>New Quote Page</h1>
-      <label for="author-input">Author</label>
-      <input id="author" />
-      <label for="text">Text</label>
-      <input id="text" />
+import QuoteForm from "../components/quotes/QuoteForm";
 
-      <button>Add Quote</button>
-    </section>
-  );
+const NewQuote = () => {
+  const addQuoteHandler = quoteData => {
+    console.log(quoteData);
+  };
+
+  return <QuoteForm onAddQuote={addQuoteHandler} />;
 };
 
 export default NewQuote;

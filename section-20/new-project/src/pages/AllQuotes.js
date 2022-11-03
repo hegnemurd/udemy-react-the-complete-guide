@@ -1,20 +1,12 @@
-import { Fragment } from "react";
-import { useParams, Route } from "react-router-dom";
+import QuoteList from "../components/quotes/QuoteList";
 
-import Comments from "../components/comments/Comments";
+const DUMMY_QUOTES = [
+  { id: "q1", author: "Potato", text: "Potato potato potato, potato!" },
+  { id: "q2", author: "Carrot", text: "Carrot, Carrot!" },
+];
 
-const QuoteDetail = () => {
-  const params = useParams();
-
-  return (
-    <Fragment>
-      <h1>Quote Detail Page</h1>
-      <p>{params.quoteId}</p>
-      <Route path={`/quotes/${params.quoteId}/comments`}>
-        <Comments />
-      </Route>
-    </Fragment>
-  );
+const AllQuotes = () => {
+  return <QuoteList quotes={DUMMY_QUOTES} />;
 };
 
-export default QuoteDetail;
+export default AllQuotes;

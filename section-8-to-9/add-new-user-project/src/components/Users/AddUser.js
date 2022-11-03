@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 
-import Card from "../UI/Card.js";
+import Card from "../UI/Card";
 import Button from "../UI/Button.js";
 import ErrorModal from "../UI/ErrorModal";
 import Wrapper from "../Helpers/Wrapper";
