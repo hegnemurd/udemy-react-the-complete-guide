@@ -21,7 +21,7 @@ function App() {
     };
 
     fetchTasks(
-      { url: 'https://react-http-88eb4-default-rtdb.europe-west1.firebasedatabase.app//tasks.json' },
+      { url: 'firebase link /tasks.json' },
       transformTasks
     );
   }, [fetchTasks]);
