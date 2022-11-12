@@ -1,5 +1,5 @@
 const FIREBASE_DOMAIN =
-  "firebase link";
+  "FIREBASE LINK";
 
 export async function getAllQuotes() {
   const response = await fetch(`${FIREBASE_DOMAIN}/quotes.json`);
