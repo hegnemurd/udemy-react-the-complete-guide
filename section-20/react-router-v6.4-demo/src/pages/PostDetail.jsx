@@ -9,6 +9,7 @@ function PostDetailPage() {
   return (
     <>
       <BlogPost title={postData.title} text={postData.body} />
+      <NewsletterSignup />
     </>
   );
 }
