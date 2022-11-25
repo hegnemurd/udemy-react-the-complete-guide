@@ -14,18 +14,15 @@ const ProfileForm = () => {
 
     const enteredNewPassword = newPasswordInputRef.current.value;
 
-    fetch(
-      "https://identitytoolkit.googleapis.com/v1/accounts:update?key=api_key",
-      {
-        method: "POST",
-        body: JSON.stringify({
-          idToken: authCtx.token,
-          password: enteredNewPassword,
-          returnSecureToken: false,
-        }),
-        headers: { "Content-Type": "application/json" },
-      }
-    ).then((res) => {
+    fetch("api_key_for_project", {
+      method: "POST",
+      body: JSON.stringify({
+        idToken: authCtx.token,
+        password: enteredNewPassword,
+        returnSecureToken: false,
+      }),
+      headers: { "Content-Type": "application/json" },
+    }).then((res) => {
       // assumption: Always succeeds!
 
       history.replace("/");
