@@ -11,7 +11,7 @@ describe("Greeting component", () => {
   });
 
   test("renders 'good to see you' if the button was NOT clicked", () => {
-    render(<Greeting />);
+    render(<Greeting />); 
 
     const goodToSeeElement = screen.getByText("good to see you", {
       exact: false,
