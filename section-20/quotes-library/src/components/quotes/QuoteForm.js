@@ -25,7 +25,7 @@ const QuoteForm = (props) => {
     setIsEntering(false);
   };
 
-  const formFocusedHanfler = () => {
+  const formFocusedHandler = () => {
     setIsEntering(true);
   };
 
@@ -39,7 +39,7 @@ const QuoteForm = (props) => {
       />
       <Card>
         <form
-          onFocus={formFocusedHanfler}
+          onFocus={formFocusedHandler}
           className={classes.form}
           onSubmit={submitFormHandler}
         >
